@@ -66,6 +66,10 @@ app-debug.apk
 
 Basta transferir para seu dispositivo Android e instalar normalmente.
 
+### ▶️ Demonstração em Vídeo
+
+[![Assista ao vídeo de demonstração](https://img.youtube.com/vi/r8G3IX73dC0/0.jpg)](https://youtube.com/shorts/r8G3IX73dC0?feature=share)
+
 ## 💡 Diferenciais
 
 - Interface moderna, responsiva e acessível
