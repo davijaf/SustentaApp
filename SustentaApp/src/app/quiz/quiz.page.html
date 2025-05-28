@@ -1,0 +1,80 @@
+<ion-header [translucent]="true">
+<ion-toolbar style="padding-top: 10px;">
+  <ion-buttons slot="start">
+    <ion-button fill="clear" color="success" class="btn-voltar" routerLink="/home">
+      <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+  <ion-title>Quiz</ion-title>
+</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="quiz-bg">
+  <div class="quiz-header">
+    <h1 class="quiz-title">Quiz Ambiental</h1>
+    <!-- <img src="assets/logo_no_bg.png" alt="Planeta Sustentável" class="quiz-earth" /> -->
+  </div>
+
+  <div *ngIf="!quizFinalizado">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Pergunta {{ perguntaAtual + 1 }} de {{ perguntas.length }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h2>{{ perguntas[perguntaAtual].pergunta }}</h2>
+        <ion-list>
+          <ion-item *ngFor="let opcao of perguntas[perguntaAtual].opcoes; let i = index"
+            (click)="selecionarResposta(i)"
+            [color]="respostaSelecionada === i ? (i === perguntas[perguntaAtual].correta ? 'success' : 'danger') : ''"
+            [disabled]="respondido"
+            class="modern-btn"
+            [ngClass]="{'resposta-respondida': respondido}">
+            <ion-icon [name]="respostaSelecionada === i ? (i === perguntas[perguntaAtual].correta ? 'checkmark-circle-outline' : 'close-circle-outline') : 'ellipse-outline'" slot="start" [color]="respostaSelecionada === i ? (i === perguntas[perguntaAtual].correta ? 'success' : 'danger') : 'medium'"></ion-icon>
+            <ion-label>{{ opcao }}</ion-label>
+          </ion-item>
+        </ion-list>
+        <div *ngIf="respondido">
+          <ion-text color="success" *ngIf="respostaSelecionada === perguntas[perguntaAtual].correta">Correto! +10 pontos</ion-text>
+          <ion-text color="danger" *ngIf="respostaSelecionada !== perguntas[perguntaAtual].correta">Incorreto!</ion-text>
+          <ion-button expand="block" (click)="proximaPergunta()" class="modern-btn proxima-btn">
+            <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+            {{ perguntaAtual < perguntas.length - 1 ? 'Próxima' : 'Finalizar' }}
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <div style="text-align:center;margin-top:12px;">
+      <ion-chip color="success">Pontuação: {{ pontuacao }}</ion-chip>
+    </div>
+  </div>
+
+  <div *ngIf="quizFinalizado" style="text-align:center;">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Quiz Finalizado!</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h2>Sua pontuação: {{ pontuacao }} pontos</h2>
+        <ion-item *ngIf="!nomeSalvo" class="modern-btn nome-input-item">
+          <ion-icon name="person-outline" slot="start" color="medium"></ion-icon>
+          <!-- <ion-label position="floating">Seu nome</ion-label> -->
+          <ion-input [(ngModel)]="nomeUsuario" maxlength="30" required clearInput inputmode="text" autocomplete="name" placeholder="Digite seu nome..." class="nome-input"></ion-input>
+        </ion-item>
+        <ion-button expand="block" color="success" (click)="salvarPontuacao()" [disabled]="nomeSalvo" class="modern-btn">
+          <ion-icon name="save-outline" slot="start"></ion-icon>
+          Salvar Pontuação
+        </ion-button>
+        <ion-button expand="block" color="primary" routerLink="/pontuacao" class="modern-btn">
+          <ion-icon name="trophy-outline" slot="start"></ion-icon>
+          Ver Ranking
+        </ion-button>
+        <ion-button expand="block" fill="outline" (click)="reiniciarQuiz()" class="modern-btn">
+          <ion-icon name="refresh-outline" slot="start"></ion-icon>
+          Tentar Novamente
+        </ion-button>
+        <ion-text color="success" *ngIf="nomeSalvo">Pontuação salva com sucesso!</ion-text>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

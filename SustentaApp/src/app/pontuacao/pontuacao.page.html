@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="padding-top: 10px;">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" color="success" class="btn-voltar" routerLink="/home">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Pontuação</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="logo-home-container">
+    <img src="assets/logo_no_bg.png" alt="Planeta Sustentável" class="quiz-earth" />
+    <!-- <img src="assets/logo.png" alt="Logo SustentaApp" class="logo-home" /> -->
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ranking - Top 10</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list *ngIf="ranking.length > 0">
+        <ion-item *ngFor="let item of ranking; let i = index">
+          <ion-label>
+            <h2>#{{ i+1 }} - {{ item.nome || 'Anônimo' }} - {{ item.pontos }} pontos</h2>
+            <p>{{ item.data | date:'dd/MM/yyyy HH:mm' }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <div *ngIf="ranking.length === 0" style="text-align:center; color: #888;">Nenhuma pontuação salva ainda.</div>
+      <div style="text-align:center; margin-top: 16px;">
+        <ion-button color="danger" (click)="limparRanking()" [disabled]="ranking.length === 0">
+          Limpar Ranking
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">pontuacao</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>

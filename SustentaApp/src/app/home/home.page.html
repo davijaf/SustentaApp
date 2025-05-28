@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success" style="padding-top: 10px;">
+    <ion-title>
+      SustentaApp
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar color="success">
+      <ion-title size="large">SustentaApp</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list inset>
+    <ion-item button routerLink="/quiz" class="modern-btn">
+      <ion-icon name="leaf-outline" slot="start" color="success"></ion-icon>
+      <ion-label>Quiz Sustentável</ion-label>
+    </ion-item>
+    <ion-item button routerLink="/pontuacao" class="modern-btn">
+      <ion-icon name="trophy-outline" slot="start" color="warning"></ion-icon>
+      <ion-label>Sistema de Pontuação</ion-label>
+    </ion-item>
+    <ion-item button routerLink="/recompensas" class="modern-btn">
+      <ion-icon name="earth-outline" slot="start" color="tertiary"></ion-icon>
+      <ion-label>Desafios Ambientais</ion-label>
+    </ion-item>
+    <ion-item button routerLink="/conteudo" class="modern-btn">
+      <ion-icon name="book-outline" slot="start" color="primary"></ion-icon>
+      <ion-label>Conteúdo Educativo</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div class="logo-home-container">
+    <img src="assets/logo.png" alt="Logo SustentaApp" class="logo-home" />
+  </div>
+</ion-content>

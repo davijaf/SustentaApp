@@ -1,0 +1,7 @@
+{
+  "name": "SustentaApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

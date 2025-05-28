@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="padding-top: 10px;">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" color="success" class="btn-voltar" routerLink="/home">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Conteúdo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="!carregando">
+    <ion-card-header>
+      <ion-card-title>Dica Ambiental do Dia</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img *ngIf="dica?.imagem" [src]="dica.imagem" [alt]="dica.title" style="width:100%;border-radius:12px;margin-bottom:16px;">
+      <h2 *ngIf="dica?.title">{{ dica.title }}</h2>
+      <p *ngIf="dica?.extract">{{ dica.extract }}</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-spinner *ngIf="carregando" style="display: block; margin: 32px auto;"></ion-spinner>
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">conteudo</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>

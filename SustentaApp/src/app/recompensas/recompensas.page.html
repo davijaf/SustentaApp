@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="padding-top: 10px;">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" color="success" class="btn-voltar" routerLink="/home">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Desafios Ambientais</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- <div class="logo-home-container">
+    <img src="assets/logo.png" alt="Logo SustentaApp" class="logo-home" />
+  </div> -->
+
+  <ion-card *ngIf="desafioDoDia">
+    <ion-card-header>
+      <ion-card-title>{{desafioDoDia.titulo}}</ion-card-title>
+      <ion-card-subtitle>{{desafioDoDia.ods}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{desafioDoDia.descricao}}</p>
+      <ion-button expand="block" color="success" (click)="marcarConcluido()" [disabled]="concluido">
+        {{ concluido ? 'Desafio concluído!' : 'Marcar como concluído' }}
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="historico.length > 0">
+    <ion-card-header>
+      <ion-card-title>Histórico de Desafios</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let h of historico; let i = index">
+          <ion-label>
+            <h3>{{h.titulo}}</h3>
+            <p>{{h.descricao}}</p>
+            <small>{{h.ods}}<br>{{h.data | date:'dd/MM/yyyy HH:mm'}}</small>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <div style="text-align:center; margin-top: 16px;">
+        <ion-button color="danger" (click)="limparHistorico()">
+          Limpar Histórico
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">desafios ambientais</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>

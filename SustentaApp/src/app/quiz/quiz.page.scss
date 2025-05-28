@@ -1,0 +1,122 @@
+// Fundo branco e detalhes em verde
+.quiz-bg {
+  --background: #fff;
+  background: var(--background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.quiz-title {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  color: #219653;
+  font-size: 2.5rem;
+  margin-bottom: 32px;
+  text-align: center;
+  text-shadow: 0 2px 8px #b7eacb44;
+}
+
+.quiz-earth {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 32px;
+  border-radius: 50%;
+  border: 6px solid #27ae60;
+  box-shadow: 0 4px 24px #b7eacb33;
+  background: #eafaf1;
+}
+
+ion-content.quiz-bg {
+  --ion-background-color: #fff;
+}
+
+.logo-home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.logo-home {
+  max-width: 180px;
+  width: 80%;
+  height: auto;
+  border-radius: 50%;
+  border: 6px solid #27ae60;
+  box-shadow: 0 4px 24px #b7eacb33;
+  background: #eafaf1;
+}
+
+.modern-btn {
+  border-radius: 16px;
+  margin: 8px 0;
+  box-shadow: 0 2px 8px rgba(33, 150, 83, 0.08);
+  background: linear-gradient(90deg, #e8f5e9 0%, #f1f8e9 100%);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.modern-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 4px rgba(33, 150, 83, 0.12);
+}
+ion-item.modern-btn ion-label {
+  font-weight: 500;
+  font-size: 1.08em;
+  color: #219653;
+}
+ion-item.modern-btn ion-icon {
+  font-size: 1.4em;
+  margin-right: 8px;
+}
+ion-button.modern-btn {
+  font-weight: 600;
+  font-size: 1.08em;
+  margin-bottom: 8px;
+}
+
+.nome-input-item {
+  border-radius: 16px;
+  margin: 12px 0 16px 0;
+  box-shadow: 0 2px 8px rgba(33, 150, 83, 0.08);
+  background: #f8faf8;
+  transition: box-shadow 0.1s;
+}
+.nome-input-item:focus-within {
+  box-shadow: 0 2px 12px #21965333;
+}
+.nome-input {
+  font-size: 1.08em;
+  font-weight: 500;
+  color: #219653;
+}
+ion-item.modern-btn.resposta-respondida ion-label {
+  color: black !important;
+}
+
+.proxima-btn {
+  background: linear-gradient(90deg, #b2f7c1 0%, #e0f7fa 100%);
+  color: #219653;
+  font-weight: 600;
+  font-size: 1.08em;
+  margin-top: 16px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(33, 150, 83, 0.10);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.proxima-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 4px rgba(33, 150, 83, 0.14);
+}
+.proxima-btn ion-icon {
+  font-size: 1.3em;
+  margin-left: 8px;
+}
