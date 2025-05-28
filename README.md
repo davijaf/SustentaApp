@@ -56,6 +56,16 @@ ionic capacitor add android
 ionic capacitor run android
 ```
 
+### 📲 Instale o APK diretamente
+
+O arquivo APK gerado está disponível em:
+
+```
+app-debug.apk
+```
+
+Basta transferir para seu dispositivo Android e instalar normalmente.
+
 ## 💡 Diferenciais
 
 - Interface moderna, responsiva e acessível
@@ -67,11 +77,11 @@ ionic capacitor run android
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="./Screenshot_20250527_235404.png" alt="Tela inicial" width="250" />
-  <img src="./Screenshot_20250527_235417.png" alt="Quiz" width="250" />
-  <img src="./Screenshot_20250527_235427.png" alt="Ranking" width="250" />
-  <img src="./Screenshot_20250527_235451.png" alt="Desafio do dia" width="250" />
-  <img src="./Screenshot_20250527_235504.png" alt="Conteúdo educativo" width="250" />
+  <img src="./screenshot/Screenshot_20250527_235404.png" alt="Tela inicial" width="250" />
+  <img src="./screenshot/Screenshot_20250527_235417.png" alt="Quiz" width="250" />
+  <img src="./screenshot/Screenshot_20250527_235427.png" alt="Ranking" width="250" />
+  <img src="./screenshot/Screenshot_20250527_235451.png" alt="Desafio do dia" width="250" />
+  <img src="./screenshot/Screenshot_20250527_235504.png" alt="Conteúdo educativo" width="250" />
 </p>
 
 ---
